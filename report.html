@@ -13755,6 +13755,7 @@ div#notebook {
 <li>Itens de limpeza e Secos e Molhados apresentaram um elevado grau de correlação positiva (0.92), ou seja, quando um cliente gasta mais em um dos segmentos, a tendência é que os gastos no outro segmento aumentem também, demonstrando um perfil linear no comportamento desta variação. Laticínios e Itens de Limpeza também apresentaram uma correlação considerável 0.66.</li>
 <li>Estes gráficos confirmam o que já foi previsto pelo score de -0.25 do atributo 'Fresh', demonstrando que este é um atributo difícil de ser previsto a partir dos outros e que o ganho de informação para a determinação de um padrão dos clientes é elevado.</li>
 <li>Os dados não apresentam um comportamento linear ou polinomial, eles apresentam um comportamento distorcido na maioria dos casos, devido ao baixo grau de correlação entre a maioria deles. Podemos notar um padrão linear entre os atributos 'Grocery' e 'Detergents_Paper' devido a sua elevada correlação, bem como entre os atributos 'Milk' e 'Detergents_Paper' mas não de forma tão acentuada.</li>
+<li>Os outliers possuem valores superiores aos do intervalo esperado, arrastando a distribuição para a direita. Fazendo com que a curva fique retorcida na direção positiva</li>
 </ul>
 
 </div>
@@ -15881,7 +15882,12 @@ Sample point 2 predicted to be in Cluster 0
 <p><strong>Resposta:</strong></p>
 <ul>
 <li>Clientes no Cluster 0, que consiste em uma elevada de elementos frescos não são uma boa escolha para diminuir a quantidade de dias de entregas, então, para estes clientes devemos manter o sistema de entregas atual 5 vezes por semana.</li>
-<li>Clientes no Cluster 1 têm como hábito estocar alimentos e trabalham com alimentos de menor perecibilidade, então, pode-se selecionar alguns destes clientes para realizar o teste de realizar entregas 3 vezes por semana.</li>
+<li>Clientes no Cluster 1 têm como hábito estocar alimentos e trabalham com alimentos de menor perecibilidade, então, pode-se selecionar alguns destes clientes para realizar o teste de realizar entregas 3 vezes por semana.<ul>
+<li>Para aplicar ou não a mudança na entrega de 5 vezes por semana para 3 nos clientes do Cluster 1 deverá ser feito um teste A/B. O ideal a ser feito é selecionar porções de clientes em regiões distintas dentro do cluster (pelo menos nas 4 pontas e na região central) para ter uma maior representatividade e realizar entregas 5 vezes por semana ou 3 vezes por semana para a mesma quantidade de clientes por um determinado tempo, sempre monitorando algumas variáveis que possam nos dizer se o serviço está melhor, pior ou manteve-se com o mesmo padrão. </li>
+<li>Estavas variáveis deverão ser definidas previamente de forma que melhor representem um coeficiente de satisfação/custo do serviço.</li>
+<li>Se a média do coeficiente de satisfação/custo para os clientes que receberam as entregas 3 vezes por semana for superior à média do coeficiente satisfação/custo dos clientes que receberam as entregas 5 vezes por semana, pelo período de tempo em que a análise foi feita, podemos realizar a mudança do sistema de entregas para todo o Cluster 1.</li>
+</ul>
+</li>
 </ul>
 
 </div>
