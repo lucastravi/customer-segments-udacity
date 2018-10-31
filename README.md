@@ -1,4 +1,5 @@
-# Content: Unsupervised Learning
+# Data Scientis Nanodegree
+# Unsupervised Learning
 ## Project: Creating Customer Segments
 
 ### Install
